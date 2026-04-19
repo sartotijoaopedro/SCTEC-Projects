@@ -1,0 +1,25 @@
+.block {
+    display: block;
+    background-color: blue;
+    color: white;
+    height: 200px;
+    border:solid, 2px, black;border-radius: 20px;
+    padding:  20px;
+}
+
+.inline {
+    display: inline;
+    background-color: red;
+    color: white;
+    border:solid, 2px, black;
+    padding: 20px;
+}
+
+.inlineblock {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    border:solid, 2px, black;
+    margin-top: 20px;
+    padding: 20px;
+}
