@@ -1,116 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joao</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abrigo Patinhas do Vale</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Joao</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre mim</a></li>
-                <li><a href="#projetos">projetos</a></li>
-                <li><a href="#contatos">contatos</a></li>
-                <li><a href="habilidades>">habilidades</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="#sobre">
-        <h2>Sobre Mim</h2>
-        <img src="1.png" alt="nao apareceu">
-        <article>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo odio eligendi rem esse, assumenda eos
-                perspiciatis ipsa porro aspernatur totam, autem atque sit aperiam officia nobis provident suscipit
-                consectetur! Sunt.</p>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Abrigo Patinhas do Vale">
+      <span class="brand-mark">P</span>
+      <span>
+        <strong>Patinhas do Vale</strong>
+        <small>Abrigo e adoção responsável</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#animais">Animais para adoção</a>
+      <a href="#matematica">Dados do abrigo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Adoção responsável</p>
+        <h1>Abrigo Patinhas do Vale</h1>
+        <p>
+          Cada adoção abre espaço para um novo resgate. Adotar é combater o abandono,
+          dar dignidade a quem esperou por cuidado e transformar carinho em compromisso.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#animais">Ver cães</a>
+          <a class="button secondary" href="#contato">Falar com o abrigo</a>
+        </div>
+      </div>
+
+      <div class="hero-gallery" aria-label="Fotos de destaque dos cães">
+        <img src="assets/dogs/dupla-amigos.jpg" alt="Dois cães de porte médio no abrigo">
+        <img src="assets/dogs/nina.jpg" alt="Cadela branca e preta sorrindo">
+        <img src="assets/dogs/mel.jpg" alt="Cadela recebendo carinho">
+      </div>
+    </section>
+
+    <section class="impact-band" aria-label="Resumo do projeto">
+      <article>
+        <strong id="totalDogs">28</strong>
+        <span>cães cadastrados</span>
+      </article>
+      <article>
+        <strong id="averageStay">0</strong>
+        <span>dias em média no abrigo</span>
+      </article>
+      <article>
+        <strong id="adoptionRate">0%</strong>
+        <span>já adotados no levantamento</span>
+      </article>
+    </section>
+
+    <section id="animais" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Animais para adoção</p>
+        <h2>Conheça quem está esperando uma família</h2>
+        <p>Use os filtros para comparar porte, sexo e situação de adoção.</p>
+      </div>
+
+      <div class="filters" aria-label="Filtros de animais">
+        <button class="filter active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="Fêmea">Fêmeas</button>
+        <button class="filter" data-filter="Macho">Machos</button>
+        <button class="filter" data-filter="Pequeno">Pequeno</button>
+        <button class="filter" data-filter="Médio">Médio</button>
+        <button class="filter" data-filter="Grande">Grande</button>
+        <button class="filter" data-filter="Disponível">Disponíveis</button>
+      </div>
+
+      <div id="dogGrid" class="dog-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="detalhes" class="section details-section" hidden>
+      <div id="dogDetails"></div>
+    </section>
+
+    <section id="matematica" class="section math-section">
+      <div class="section-heading">
+        <p class="eyebrow">Parte matemática do projeto</p>
+        <h2>Dados que ajudam o abrigo a decidir prioridades</h2>
+        <p>Os gráficos usam datas de entrada simuladas para demonstrar os cálculos pedidos.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span>Média de permanência</span>
+          <strong id="mathAverage">0 dias</strong>
         </article>
+        <article class="stat-card">
+          <span>Cães adotados</span>
+          <strong id="mathAdopted">0%</strong>
+        </article>
+        <article class="stat-card">
+          <span>Cães ainda no abrigo</span>
+          <strong id="mathWaiting">0%</strong>
+        </article>
+      </div>
+
+      <div class="charts">
+        <article class="chart-panel">
+          <h3>Tempo no abrigo por animal</h3>
+          <canvas id="stayChart" width="900" height="420" aria-label="Gráfico de barras com tempo no abrigo"></canvas>
+        </article>
+      </div>
     </section>
 
-    <section id="#projetos">
-        <h3>projetos</h3>
-        <aside>
-            <article>
-                </ul>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, repellat consequuntur praesentium
-                    autem accusamus aliquid molestias deserunt cum sapiente saepe aut pariatur earum vitae rerum harum
-                    eligendi. Veritatis, modi illo?</p>
-            </article>
-        </aside>
+    <section id="contato" class="contact-section">
+      <div>
+        <p class="eyebrow">Contato para adoção</p>
+        <h2>Quer adotar ou ajudar?</h2>
+        <p>
+          Envie uma mensagem para o abrigo informando o nome do cão, sua cidade e se já
+          tem outros animais em casa.
+        </p>
+      </div>
+      <address>
+        <strong>Abrigo Patinhas do Vale</strong>
+        <a href="mailto:adocao@patinhasdovale.org">adocao@patinhasdovale.org</a>
+        <a href="tel:+5548999999999">(48) 99999-9999</a>
+        <span>Atendimento: segunda a sábado, 9h às 17h</span>
+      </address>
+      <a class="button primary" href="mailto:adocao@patinhasdovale.org?subject=Quero%20adotar">Entrar em contato</a>
     </section>
+  </main>
 
-    <section id="habilidades">
-        <table>
-            <thead>
-                <tr>
-                    <th>Tecnologia</th>
-                    <th>Nivel</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
+  <footer class="site-footer">
+    <p>Projeto escolar sobre adoção responsável, permanência no abrigo e combate ao abandono animal.</p>
+  </footer>
 
-            <tbody>
-                <tr>
-                    <td>HTML</td>
-                    <td>Básico</td>
-                    <td>Capaz de estruturar um site bem</td>
-                </tr>
-
-                <tr>
-                    <td>CSS</td>
-                    <td>Iniciante</td>
-                    <td>Não tem muito oque falar né, eu sou iniciante</td>
-                </tr>
-
-                <tr>
-                    <td>JavaScript</td>
-                    <td>Iniciante</td>
-                    <td>Consigo criar pequenas interações com JavaScript no momento</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="contatos">
-        <footer>
-            <article>
-                <h3>me contatem</h3>
-                <address>
-                    emaiil <a href="joao@joao.com">joao@joao.com</a> <br>
-                    numero <a href="489999999999">999999999</a>
-                </address>
-            </article>
-            <form action="">
-
-                <input type="date"> <br>
-
-                <select name="assunto" id="assunto">
-                    <option value="assunto">Assunto</option>
-                    <option value="Orçamento">Orçamento</option>
-                    <option value="Outro">Outro</option>
-                </select> <br>
-
-                <label for="email">Email: </label>
-                <input type="email" , id="email" , name="email"> <br>
-
-                <label for="telefone">telefone: </label>
-                <input type="tel" , id="telefone" , name="telefone"> <br>
-
-                <label for="mensagem">mensagem</label>
-                <textarea name="mensagem" id="mensagem" cols="20" , rows="10"></textarea> <br>
-
-                <input type="checkbox" id="inscriçao" name="inscriçao">
-                <label for="inscriçao">Deseja receber minhas noticias</label> <br>
-
-                <input type="submit" value="Enviar conteudo das mensagens">
-            </form>
-
-        </footer>
-    </section>
+  <script src="app.js"></script>
 </body>
-
 </html>
